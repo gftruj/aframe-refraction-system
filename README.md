@@ -20,16 +20,16 @@ Check it out live at this fiddle: https://jsfiddle.net/gftruj/gofdyd1a/6/.
 | resolution           |      256     | Sets the length of the cubeCamera cube's edges      |
 | tickrate  		   |      10      | The updateCubeMap (in system), or how often should the texture be updated (in component) |
 
-If the 'far' attribute is low enough, the camera will only catch close objects:
-![low far distance](https://github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(282).png)
+If the 'far' attribute is low enough, the camera will only catch close objects:__
+![low far distance](https://github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(282).png)__
 
 
-It does not seem to affect my FPS rate :
-![59 FPS](https://github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(283).png)
+It does not seem to affect my FPS rate :__
+![59 FPS](https://github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(283).png)__
 
 
-Looks amazing with normal maps:
-![basic](https://github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(286).png)
+Looks amazing with normal maps:__
+![basic](https://github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(286).png)__
 ### Notes:
 
 
