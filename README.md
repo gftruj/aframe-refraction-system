@@ -36,15 +36,15 @@ npm install aframe-refraction-system
 If You don't want to check out my fiddle:<br />
 
 If the 'far' attribute is low enough, the camera will only catch close objects:<br />
-![low far distance](https://raw.github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(282).png)<br />
+![low far distance](https://github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(282).png)<br />
 
 
 It does not seem to affect my FPS rate :<br />
-![59 FPS](https://raw.github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(283).png)<br />
+![59 FPS](https://github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(283).png)<br />
 
 
 Looks amazing with normal maps:<br />
-![basic](https://raw.github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(286).png)<br />
+![basic](https://github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(286).png)<br />
 ### Notes:
  -  do realize that "realtime" is the opposite of "good performance". At least this simple project may be of use to someone willing to expand it
 
