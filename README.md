@@ -11,7 +11,6 @@ If there are no registered entities, the camera is removed.
 Needs to work almost realtime to look good, still, I didn't experience fps-drops.
 
 Check it out live at this fiddle: https://jsfiddle.net/gftruj/gofdyd1a/6/.
-
 ### Usage
 #### script
 attach the script <br />
@@ -19,9 +18,16 @@ attach the script <br />
 
 and make sure you HAVE a `<a-camera>` entity.
 
-#### npm:
-npm install aframe-refraction-system
+`<a-scene refraction-component="near:1;far:100">`
+`<a-camera></a-camera>`
 
+#### npm:
+`npm install aframe-refraction-system`
+
+set the camera attributes in the system: <br />
+`<a-scene refraction-component="near:1;far:100">`, 
+and the texture tickrate in the component:<br />
+ `<a-entity refraction-component="tickrate:150">`
 
 ### Attributes
 
