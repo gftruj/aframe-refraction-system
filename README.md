@@ -24,7 +24,7 @@ If the 'far' attribute is low enough, the camera will only catch close objects:
 ![low far distance](https://github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(282).png)
 
 
-It does not seem to affect my FPS rate 
+It does not seem to affect my FPS rate :
 ![59 FPS](https://github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(283).png)
 
 
