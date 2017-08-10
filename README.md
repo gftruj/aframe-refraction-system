@@ -54,7 +54,7 @@ Looks amazing with normal maps:<br />
 ### Notes:
  - I do realize that "realtime" is the opposite of "good performance". At least this simple project may be of use to someone willing to expand it
 
- - I do not attach the cubeCamera to the <a-camera>. The cubeCamera scale ( I think its scale, it may be some other issue, making the envMap smaller) gets messed up, so instead of adjusting it I change its position, so the envMap won't look ridiculous. This is a bad idea since its more wasteful then adding one camera to the other, but I'll need to work out the scaling issue.
+ - I do not attach the cubeCamera to the `<a-camera>`. The cubeCamera scale ( I think its scale, it may be some other issue, making the envMap smaller) gets messed up, so instead of adjusting it I change its position, so the envMap won't look ridiculous. This is a bad idea since its more wasteful then adding one camera to the other, but I'll need to work out the scaling issue.
 
  I could use the scaling thing to my advantage if I expose it as a variable for people to mess with it.
 
