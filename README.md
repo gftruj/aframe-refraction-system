@@ -23,8 +23,11 @@ Check it out live at this fiddle: https://jsfiddle.net/gftruj/gofdyd1a/6/.
 If the 'far' attribute is low enough, the camera will only catch close objects:
 ![low far distance](https://github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(282).png)
 
+
 It does not seem to affect my FPS rate 
 ![59 FPS](https://github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(283).png)
+
+
 Looks amazing with normal maps:
 ![basic](https://github.com/gftruj/aframe-refraction-system/blob/master/pics/Screenshot%20(286).png)
 ### Notes:
