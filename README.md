@@ -10,7 +10,8 @@ If there are no registered entities, the camera is removed.
 
 Needs to work almost realtime to look good, still, I didn't experience fps-drops.
 
-Check it out live at this fiddle: https://jsfiddle.net/gftruj/gofdyd1a/6/.
+Check it out here: https://cdn.rawgit.com/gftruj/aframe-refraction-system/b63a6c0f/example/example.html <br/>
+, or live at this fiddle: https://jsfiddle.net/gftruj/gofdyd1a/6/ <br/>
 ### Usage
 #### script
 attach the script <br />
