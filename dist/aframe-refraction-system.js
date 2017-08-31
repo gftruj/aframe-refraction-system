@@ -1,3 +1,9 @@
+/* globals AFRAME */
+if (typeof AFRAME === 'undefined') {
+  throw new Error('Component attempted to register before AFRAME' +
+    ' was available.');
+}
+
 AFRAME.registerSystem('refraction-component', {
   schema: {
     near: {
@@ -23,11 +29,12 @@ AFRAME.registerSystem('refraction-component', {
     this.tick = AFRAME.utils.throttleTick(this.throttledTick, data.tickrate, this);
   },
   throttledTick: function(t, dt) {
+    if(typeof this.refractionCamera === 'undefined'){return};
     let position = document.querySelector('a-camera').getAttribute('position');
     if (position) {
       this.refractionCamera.position.set(position.x, position.y, position.z);
     }
-    this.refractionCamera.updateCubeMap(AFRAME.scenes[0].renderer, this.el.sceneEl.object3D);
+    this.refractionCamera.updateCubeMap(AFRAME.scenes[0].renderer, this.el.sceneEl.object3D)
   },
   getTexture() {
     return this.refractionCamera.renderTarget.texture;
