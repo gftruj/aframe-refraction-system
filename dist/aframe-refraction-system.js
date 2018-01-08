@@ -35,6 +35,10 @@ AFRAME.registerSystem('refraction-component', {
       this.refractionCamera.position.set(position.x, position.y, position.z);
     }
     this.refractionCamera.updateCubeMap(AFRAME.scenes[0].renderer, this.el.sceneEl.object3D)
+    for (let i = 0; i < this.entities.length; i++){
+        //TODO use frustums or something to make this acceptable
+        this.entities[i].components["refraction-component"].updateMaterial()
+    }
   },
   getTexture() {
     return this.refractionCamera.renderTarget.texture;
@@ -59,19 +63,11 @@ AFRAME.registerSystem('refraction-component', {
   }
 });
 AFRAME.registerComponent('refraction-component', {
-  schema: {
-    tickrate: {
-      type: 'number',
-      default: 10
-    }
-  },
   init: function() {
     this.system.registerMe(this.el);
     this.counter = 0;
-    this.tick = AFRAME.utils.throttleTick(this.throttledTick, this.data.tickrate, this);
   },
-  throttledTick: function(t, dt) {
-    //TODO use frustums or something to make this acceptable
+  updateMaterial: function() {
     this.mesh = this.el.getObject3D('mesh');
     if (this.mesh) {
       this.mesh.material.visible = false;
