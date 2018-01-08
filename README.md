@@ -15,7 +15,7 @@ Check it out here: https://cdn.rawgit.com/gftruj/aframe-refraction-system/b63a6c
 ### Usage
 #### script
 attach the script <br />
-`<script src="https://cdn.rawgit.com/gftruj/aframe-refraction-system/3d5424c2/dist/aframe-refraction-system.js"></script>`
+`<script src="https://cdn.rawgit.com/gftruj/aframe-refraction-system/70fb372c/dist/aframe-refraction-system.js"></script>`
 
 and make sure you HAVE a `<a-camera>` entity.
 
