@@ -4,9 +4,6 @@
 ## Description
 
 The system creates a THREE.cubeCamera, which provides an envMap texture to each registered entity. Uses the THREE.CubeRefractionMapping. The cubeCamera is not attached to the original camera, it just changes position ( explanation in the notes ).
-There is need of a existing camera component, i could double check it, but it is easier to keep a `<a-camera>` entity in the scene.
-
-If there are no registered entities, the camera is removed.
 
 Needs to work almost realtime to look good, still, I didn't experience fps-drops.
 
@@ -17,7 +14,7 @@ attach the script <br />
 `<script src="https://cdn.rawgit.com/gftruj/aframe-refraction-system/eef3e0ee/dist/aframe-refraction-system.min.js"></script>`
 
 
-`<a-scene refraction-component="near:1;far:100">`
+`<a-scene refraction-component="near:1;far:100">`<br>
 `<a-entity refraction-component"></a-entity>`
 #### npm:
 `npm install aframe-refraction-system`
