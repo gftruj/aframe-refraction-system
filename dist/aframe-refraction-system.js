@@ -25,47 +25,56 @@ AFRAME.registerSystem('refraction-component', {
   },
   init: function() {
     this.entities = [];
-    let data = this.data;
-    this.tick = AFRAME.utils.throttleTick(this.throttledTick, data.tickrate, this);
+    this.refractionCamera = null
+    this.el.addEventListener("camera-set-active", (e)=> this.getCameraPosition())
+  },
+  getCameraPosition: function() {
+      this.camera = document.querySelector('[camera]')
+      if(!this.camera) {
+        this.camera = document.querySelector('a-camera')
+      }
+      this.cameraPos = this.camera ? this.camera.getAttribute('position') : null
   },
   throttledTick: function(t, dt) {
-    if(typeof this.refractionCamera === 'undefined'){return};
-    let position = document.querySelector('a-camera').getAttribute('position');
-    if (position) {
-      this.refractionCamera.position.set(position.x, position.y, position.z);
+    if(!this.refractionCamera){return};
+    if (this.cameraPos) {
+      this.refractionCamera.position.set(this.cameraPos.x, this.cameraPos.y, this.cameraPos.z);
     }
-    this.refractionCamera.updateCubeMap(AFRAME.scenes[0].renderer, this.el.sceneEl.object3D)
+    this.refractionCamera.update(AFRAME.scenes[0].renderer, this.el.sceneEl.object3D)
     for (let i = 0; i < this.entities.length; i++){
-        //TODO use frustums or something to make this acceptable
         this.entities[i].components["refraction-component"].updateMaterial()
     }
   },
   getTexture() {
     return this.refractionCamera.renderTarget.texture;
   },
-  registerMe: function(el) {
+  update: function() {
     let data = this.data;
+    if (this.refractionCamera)
+      delete this.refractionCamera
+    this.tick = AFRAME.utils.throttleTick(this.throttledTick, data.tickrate, this);
+    this.refractionCamera = new THREE.CubeCamera(data.near, data.far, data.resolution);
+    this.refractionCamera.renderTarget.texture.mapping = THREE.CubeRefractionMapping;
+    this.el.object3D.add(this.refractionCamera);
+  },
+  remove: function() {
+    if (this.refractionCamera) {
+      delete this.refractionCamera
+      this.el.object3D.remove(this.refractionCamera);
+    }
+  },
+  registerMe: function(el) {
     this.entities.push(el);
-    if (this.entities.lenght != 0) {
-      if (!this.refractionCamera) {
-        this.refractionCamera = new THREE.CubeCamera(data.near, data.far, data.resolution);
-        this.refractionCamera.renderTarget.texture.mapping = THREE.CubeRefractionMapping;
-        this.el.object3D.add(this.refractionCamera);
-      }
-    };
   },
   unregisterMe: function(el) {
     var index = this.entities.indexOf(el);
     this.entities.splice(index, 1);
-    if (this.entities.length === 0) {
-      this.el.object3D.remove(this.refractionCamera);
-    }
   }
 });
+
 AFRAME.registerComponent('refraction-component', {
   init: function() {
     this.system.registerMe(this.el);
-    this.counter = 0;
   },
   updateMaterial: function() {
     this.mesh = this.el.getObject3D('mesh');

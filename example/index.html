@@ -1,0 +1,31 @@
+<html>
+<head>
+<title> Refraction Example </title>
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="../dist/aframe-refraction-system.min.js">
+</script>
+</head>
+<body>
+<a-scene>
+  <a-sphere position="0 1.6 -2" 
+            material="roughness:0.5;metalness:1; normalMap:assets/normals/bricks.png" 
+            refraction-component></a-sphere>
+  <a-circle position="2 1.6 -2" 
+           material="roughness:0.75;metalness:0.5;color:#ffffff;normalMap:assets/normals/face.png" 
+           refraction-component></a-circle>
+  <a-circle position="-2 1.6 -2" 
+            material="color:#aabbcc;roughness:0;metalness:0.75;normalMap:assets/normals/ice.png" 
+            refraction-component></a-circle>
+  <a-sky radius="10" 
+         rotation="0 -45 0" 
+         material="src:assets/lobster.jpg"></a-sky>
+
+  <a-box position="0 1.2 -4" 
+         color="gray" 
+         material="normalMap:assets/normals/box.png;"></a-box>
+  <a-box position="2 1.2 -4" 
+         color="gray" 
+         material="normalMap:assets/normals/box.png;"></a-box>
+</a-scene>
+</body>
+</html>
