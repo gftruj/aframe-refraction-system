@@ -1,6 +1,6 @@
 # aframe-refraction-system
 [![Version](https://img.shields.io/npm/v/aframe-refraction-system.svg?style=flat-square)](https://www.npmjs.com/package/aframe-refraction-system)
-
+![low far distance](pics/screan.png)<br />
 ## Description
 
 The system creates a THREE.cubeCamera, which provides an envMap texture to each registered entity. Uses the THREE.CubeRefractionMapping. The cubeCamera is not attached to the original camera, it just changes position ( explanation in the notes ).
