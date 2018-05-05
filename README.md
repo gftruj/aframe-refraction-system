@@ -22,7 +22,7 @@ attach the script <br />
 set the camera attributes in the system: <br />
 `<a-scene refraction-component="near:1;far:100">`, 
 and the texture tickrate in the component:<br />
- `<a-entity refraction-component="tickrate:150">`
+ `<a-entity refraction-component>`
 
 ### Attributes
 
